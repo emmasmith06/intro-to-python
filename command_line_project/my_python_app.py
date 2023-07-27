@@ -2,6 +2,12 @@ import math
 
 print("Welcome to my game created following my python training course")
 print("This programme can be used to solve a sudoku")
+print("     _______. __    __   _______   ______    __  ___  __    __          _______.  ______    __      ____    ____  _______ .______ ")     
+print("    /       ||  |  |  | |       \ /  __  \  |  |/  / |  |  |  |        /       | /  __  \  |  |     \   \  /   / |   ____||   _  \   ")  
+print("   |   (----`|  |  |  | |  .--.  |  |  |  | |  '  /  |  |  |  |       |   (----`|  |  |  | |  |      \   \/   /  |  |__   |  |_)  |    ")
+print("    \   \    |  |  |  | |  |  |  |  |  |  | |    <   |  |  |  |        \   \    |  |  |  | |  |       \      /   |   __|  |      /     ")
+print(".----)   |   |  `--'  | |  '--'  |  `--'  | |  .  \  |  `--'  |    .----)   |   |  `--'  | |  `----.   \    /    |  |____ |  |\  \----.")
+print("|_______/     \______/  |_______/ \______/  |__|\__\  \______/     |_______/     \______/  |_______|    \__/     |_______|| _| `._____|")
 #puzzle = input("Enter a sudoku puzzle in the following format [[],[],...,[]], where each [] contains the values in a row with blanks replaced by the value 0")
 
 ## Finds next empty space in sudoku
@@ -64,7 +70,24 @@ def print_solved_sudoku(puzzle):
     for c in range(9):
       print(puzzle[r][c],end = " ")
     print()
-    
+
+##Prints a calculator
+def print_cal():
+  print(" _____________________")
+  print("|  _________________  |")
+  print("| | CALCULATING ... | |")
+  print("| |_________________| |")
+  print("|  ___ ___ ___   ___  |")
+  print("| | 7 | 8 | 9 | | + | |")
+  print("| |___|___|___| |___| |")
+  print("| | 4 | 5 | 6 | | - | |")
+  print("| |___|___|___| |___| |")
+  print("| | 1 | 2 | 3 | | x | |")
+  print("| |___|___|___| |___| |")
+  print("| | . | 0 | = | | / | |")
+  print("| |___|___|___| |___| |")
+  print("|_____________________|")
+  
 #Test run
 puzzle = [[6,3,1,8,0,9,4,2,7],
         [9,7,2,3,0,1,6,0,8],
@@ -76,8 +99,11 @@ puzzle = [[6,3,1,8,0,9,4,2,7],
         [3,0,7,1,9,4,0,6,2],
         [1,2,6,7,8,5,3,4,0]]
 
+#Running the solver and printing the solution
 if solve_sudoku(puzzle):
+  print_cal()
   print("Here is your solved sudoku: ")
   print_solved_sudoku(puzzle)
 else:
+  print_cal()
   print("Your sudoku cannot be solved")
